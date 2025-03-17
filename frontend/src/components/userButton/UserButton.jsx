@@ -1,23 +1,27 @@
 import React, { useState } from "react";
-import './userButton.css'
+import "./userButton.css";
+import Image from "../image/Image";
 const UserButton = () => {
   const currentUset = true;
-  const [open, setOpen] =useState(false)
+  const [open, setOpen] = useState(false);
 
   return currentUset ? (
     <div className="userButton">
-      <img src="/general/noAvatar.png" alt="" />
-      <img
-        onClick={() => setOpen((prev) => !prev)}
-        src="/general/arrow.svg"
+      <Image path="/general/noAvatar.png" alt="" />
+
+      <Image
+        path="/general/arrow.svg"
         alt=""
         className="arrow"
+        onClick={() => setOpen((prev) => !prev)}
       />
-     {open &&  <div className="userOptions">
-        <div className="userOption">Profile</div>
-        <div className="userOption">Settings</div>
-        <div className="userOption">Logout</div>
-      </div>}
+      {open && (
+        <div className="userOptions">
+          <div className="userOption">Profile</div>
+          <div className="userOption">Settings</div>
+          <div className="userOption">Logout</div>
+        </div>
+      )}
     </div>
   ) : (
     <a href="/" className="LoginLink">
