@@ -11,7 +11,7 @@ const Leftbar = () => {
         <a href="/" className="menuIcon">
           <Image path="/general/home.svg" alt="" />
         </a>
-        <a href="/" className="menuIcon">
+        <a href="/create" className="menuIcon">
           <Image path="/general/create.svg" alt="" />
         </a>
         <a href="/" className="menuIcon">
