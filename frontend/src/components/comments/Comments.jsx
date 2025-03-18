@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "./comments.css";
 import Image from "../image/Image";
+import EmojiPicker from "emoji-picker-react";
 const Comments = () => {
+  const [openEmojiPicker, setOpenEmojiPicker] = useState(false);
+  
   return (
     <div className="comments">
       <div className="commentList">
@@ -58,9 +61,14 @@ const Comments = () => {
           placeholder="Add a comment"
         />
         <div className="emoji">
-          <div>😀</div>
+          <div onClick={() => setOpenEmojiPicker(!openEmojiPicker)}>😀</div>
+         {openEmojiPicker && (
+          <div className="emojiPicker">
+            <EmojiPicker />
+          </div>
+         )}
         </div>
-        <button className="commentButton">Send</button>
+        {/* <button className="commentButton">Send</button> */}
       </form>
     </div>
   );
